@@ -1,29 +1,60 @@
+var nestedTabSelect = (tabsElement, currentElement) => {
+   const tabs = tabsElement ?? 'ul.tabs';
 
-// 주메뉴 탭( BEST ITEM, NEW ARRIVAL, MD'S CHOICE) 첫번째 방법
-var targetLink = document.querySelectorAll('.tab_menu a');
-var tabContent = document.querySelectorAll('.panel >li ');
+   const currentClass = currentElement ?? 'active';
+   console.log(currentClass);
+
+   var test =  document.querySelectorAll(tabs)
+   console.log(test);
+   document.querySelectorAll(tabs).forEach(function (tabContainer) {
+     let activeLink, activeContent;
+     const links = Array.from(tabContainer.querySelectorAll("a"));
+     console.log(links);
+
+     
 
 
-for(var i=0; i<targetLink.length; i++){
+     activeLink = links.find(function (link) {
+         return link.getAttribute("href") === location.hash;
+       }) || links[0];
+       console.log(links[0]);
+     console.log(activeLink);
+     activeLink.classList.add(currentClass);
+   
+ 
+     activeContent = document.querySelector(activeLink.getAttribute("href"));
+      console.log(activeContent);
+     activeContent.classList.add(currentClass);
+ 
+     links.forEach(function (link) {
+       if (link !== activeLink) {
+         const content = document.querySelector(link.getAttribute("href"));
+         // console.log(content);
+         content.classList.remove(currentClass);
+       }
+     });
+ 
+     tabContainer.addEventListener("click", function (e) {
+       if (e.target.tagName === "A") {
 
-targetLink[i].addEventListener('click', function(e){
-   e.preventDefault();
-   var orgTarget = e.target.getAttribute('href');
-   console.log(orgTarget);
-   var tabTarget = orgTarget.replace('#','');
+         activeLink.classList.remove(currentClass);
+         activeContent.classList.remove(currentClass);
+ 
 
-   for(var x =0; x < tabContent.length; x++){
-      tabContent[x].style.display ='none'
-   }
- document.getElementById(tabTarget).style.display = 'block';
-
- for(var j = 0; j<targetLink.length; j++){
-       targetLink[j].classList.remove('selected');
-       e.target.classList.add('selected');
- }
-});   
-}
-
-document.getElementById('tab1').style.display = 'block';
+         activeLink = e.target;
+         console.log(activeLink);
+         
+         activeContent = document.querySelector(activeLink.getAttribute("href"));
+         console.log(activeContent);
+         activeLink.classList.add(currentClass);
+         activeContent.classList.add(currentClass);
+ 
+         e.preventDefault();
+       }
+     });
+   });
+ };
+ 
+ nestedTabSelect('ul.tabs', 'active');
 
  
