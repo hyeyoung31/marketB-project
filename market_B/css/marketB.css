@@ -364,7 +364,7 @@ span.txt {
   margin:0 auto;
 }
 
-c_mainbanner .swipe_banner_all {
+.pc_mainbanner .swipe_banner_all {
   position: relative;
   max-width: 1920px;
   overflow: hidden;
