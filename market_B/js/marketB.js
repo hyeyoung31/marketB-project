@@ -35,4 +35,8 @@ $(function () {
     tabLinkActive.trigger('click');
   }
 
+      $(".youtube-link").grtyoutube({
+      autoplay: true,
+      theme: "dark"
+    });
 });
