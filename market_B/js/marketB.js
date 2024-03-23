@@ -1,4 +1,13 @@
-$(function () {
+let head = $('.head_wrapper'),
+    gnb = $('.head_gnb');
+
+    head.mouseenter(function(){
+      gnb.addClass('active')
+    });
+
+    gnb.mouseleave(function(){
+      gnb.removeClass('active')
+    });
 
   const tabLink = $('.tabs li a');
   const nestedLink = $('.nested_tabs li a'); 
@@ -39,4 +48,4 @@ $(function () {
       autoplay: true,
       theme: "dark"
     });
-});
+
