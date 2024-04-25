@@ -8,10 +8,10 @@ a {
   color: inherit;
 }
 
-
 .container {
   max-width: 1296px;
   width: 90%;
+  padding: 0;
   margin: 0 auto;
 }
 
@@ -78,12 +78,13 @@ h1 a {
   z-index: 9999;
   height: 100%;
   font-size: 14px;
-  font-weight:500;
+  font-weight: 500;
   background: #fff;
   position: fixed;
   left: -100%;
   top: 0px;
-  width: 100%
+  width: 100%;
+  color: #666;
 }
 
 .mm-body {
@@ -104,7 +105,7 @@ h1 a {
 .mm-header {
   height: 99px;
   border-bottom: 0;
-  background-color: #f5f5f5;
+  background-color: #efefef;
 }
 
 .mm-header h2 {
@@ -149,7 +150,7 @@ h1 a {
 .quick-menu {
   padding: 0 21px 0 11px;
   height: 48px;
-  border-bottom: 1px solid  #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
   background-color: #fff;
   line-height: 48px;
   display: flex;
@@ -205,6 +206,7 @@ h1 a {
   gap: 20px;
   padding: 13px 25px;
   font-weight: 600;
+  color: #666;
 }
 
 .accordion-button img {
@@ -230,7 +232,7 @@ h1 a {
   background: #f5f5f5;
   margin: 10px 0;
   padding: 5px 20px 10px;
-  border-radius: 13px;
+  border-radius: 3px;
 }
 
 .accordion-body ul li {
@@ -281,26 +283,21 @@ h1 a {
   background-size: cover;
 }
 
-.Mbanner4 {
-  background: url("../image/Mbanner.png") no-repeat 50% 0;
-  background-size: cover;
-}
-
 .mainbanner .maintext-wrapper .banner_main_tit {
   display: block;
-  font-size: 5.23vw;
+  font-size: 5.2vw;
   font-weight: 700;
   overflow: hidden;
   width: 1000px;
   text-overflow: ellipsis;
   white-space: nowrap;
-  margin-bottom: 3vw;
+  margin-bottom: 10px;
 }
 
 
 .mainbanner .maintext-wrapper .banner_sub_tit {
   display: block;
-  font-size: 3vw;
+  font-size: 3.4vw;
   font-weight: 500;
   text-align: left;
 }
@@ -310,15 +307,6 @@ h1 a {
 .mainbanner {
   position: relative;
   margin: 0 auto;
-}
-
-
-.swiper-pagination {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 50;
-  margin-top: 20px;
 }
 
 .banner-pagination {
@@ -500,13 +488,31 @@ figcaption {
   flex: 1;
 }
 
-.like {
+.item-image .like {
   position: absolute;
   top: 8%;
   right: 8%;
   font-size: 4.2vw;
-  color: #6A6A6A;
+  color: #5b6076;
 }
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+}
+
+.selected {
+  font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+}
+
+
 
 .Mtabs-content.active,
 .Mnested-content.active {
@@ -556,6 +562,20 @@ figcaption {
   top: 2px;
 }
 
+.Mnested-content {
+  position: relative;
+  padding-bottom: 50px;
+}
+
+
+.Mnested-content .swiper-pagination {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  z-index: 50;
+}
+
 #Ptab-wrapper {
   display: none;
 }
@@ -563,11 +583,14 @@ figcaption {
 /* 서브배너 */
 .sub-banner {
   height: 80px;
-  width: 90%;
+  width: 100%;
   margin: 110px auto 0;
   overflow: hidden;
   border-radius: 13px;
+  position: relative;
 }
+
+
 
 .sub-banner a {
   height: 80px;
@@ -575,18 +598,20 @@ figcaption {
   display: block;
 }
 
+
+
 .sub1 a {
-  background: url("../image/subbanner_1.png") no-repeat 80% 50%;
+  background: url("../image/subbanner_1.png") no-repeat 100% 50%;
   background-size: cover;
 }
 
 .sub2 a {
-  background: url("../image/subbanner_2.png") no-repeat 80% 50%;
+  background: url("../image/subbanner_2.png") no-repeat 100% 50%;
   background-size: cover;
 }
 
 .sub3 a {
-  background: url("../image/subbanner_1.png") no-repeat 80% 50%;
+  background: url("../image/subbanner_1.png") no-repeat 100% 50%;
   background-size: cover;
 }
 
@@ -595,6 +620,8 @@ section h2 {
   font-size: 4.3vw;
   font-weight: 700;
 }
+
+
 
 /* 모바일 유튜브  */
 
@@ -639,6 +666,10 @@ iframe {
   width: 100%;
 }
 
+.youtube_banner {
+  display: none;
+}
+
 /* 모바일 매거진 */
 .magazine-wrapper {
   margin: 70px auto 0;
@@ -648,6 +679,7 @@ iframe {
 .magazine-wrapper .swiper-slide {
   margin: 0 auto;
   text-align: left;
+  overflow: hidden;
 }
 
 .magazine-wrapper .swiper-slide img {
@@ -674,6 +706,15 @@ iframe {
   font-family: 'Pretendard light';
   font-weight: 400;
   line-height: 1.618;
+  white-space: nowrap;
+}
+
+.magazine-wrapper .swiper-pagination {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  margin-top: 10px;
 }
 
 footer {
@@ -783,30 +824,27 @@ address {
 
 @media screen and (min-width:576px) {
   .container {
+
     /* max-width: 540px; */
     max-width: 543px;
-  }
-
-  .mt-menu {
-    display: none;
   }
 
   /* 태블릿 배너 */
   .mainbanner .maintext-wrapper .banner_main_tit {
     display: block;
-    font-size: 2.18rem;
+    font-size: 1.875rem;
     font-weight: 700;
     overflow: hidden;
     width: 1000px;
     text-overflow: ellipsis;
     white-space: nowrap;
-    margin-bottom: 24px;
+    margin-bottom: 10px;
   }
 
 
   .mainbanner .maintext-wrapper .banner_sub_tit {
     display: block;
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     font-weight: 500;
     text-align: left;
   }
@@ -815,6 +853,7 @@ address {
   .mainbanner {
     position: relative;
   }
+
 
 
   /* 태블릿 아이콘메뉴 */
@@ -864,7 +903,7 @@ address {
     font-size: 0.8125rem;
   }
 
-  .like {
+  .item-image .like {
     font-size: 1.25rem;
   }
 
@@ -876,7 +915,7 @@ address {
   .sub-banner {
     border-radius: 13px;
     height: 130px;
-    width: 90%;
+    width: 100%;
   }
 
   .sub-banner a {
@@ -1005,16 +1044,17 @@ address {
     position: relative;
   }
 
-  .mainbanner .play-button div {
+  .mainbanner .play-button button {
     position: absolute;
     display: none;
+    border: none;
   }
 
   .mainbanner .play-button .start.active {
     display: block;
   }
 
-  .mainbanner .play-button .pause.active {
+  .mainbanner .play-button .stop.active {
     display: block;
   }
 
@@ -1025,7 +1065,7 @@ address {
     height: 55px;
   }
 
-  .mainbanner .button-wrapper .pause {
+  .mainbanner .button-wrapper .stop {
     background: url(../image/swiper-button-pause.png) no-repeat 0 0 / cover;
     width: 53px;
     height: 55px;
@@ -1050,6 +1090,9 @@ address {
 
 /* pc화면 */
 @media screen and (min-width:1025px) {
+  .mt-menu {
+    display: none;
+  }
 
   #skip {
     position: relative;
@@ -1064,7 +1107,8 @@ address {
     top: -35px;
     padding: 3px;
     color: #fff;
-    background: rgba(0, 0, 0, 0.8);
+    background:
+      rgba(0, 0, 0, 0.8);
     line-height: 30px;
     width: 150px;
     text-align: center;
@@ -1187,9 +1231,8 @@ address {
     padding: 0 5px;
   }
 
-
   /* PC메뉴 */
-  
+
   .bottom-nav {
     display: none;
   }
@@ -1253,7 +1296,8 @@ address {
   }
 
   .head_gnb .menu-list .depth_list.depth_1>ul>li:hover>a {
-    background: #121212;
+    /* background: #121212; */
+    background: #5b6076;
     color: #fff;
     font-family: 'Pretendard-Medium';
   }
@@ -1448,7 +1492,7 @@ address {
   }
 
 
-   /* PC 배너 */
+  /* PC 배너 */
 
   .mainbanner {
     width: 100%;
@@ -1463,22 +1507,17 @@ address {
   }
 
   .Mbanner1 {
-    background: url("../image/Pbanner1.jpg") no-repeat 50% 50%;
+    background: url("../image/Pbanner1.jpg") no-repeat 45% 50%;
     background-size: cover;
   }
 
   .Mbanner2 {
-    background: url("../image/Pbanner2.jpg") no-repeat 50% 50%;
+    background: url("../image/Pbanner2.jpg") no-repeat 30% 50%;
     background-size: cover;
   }
 
   .Mbanner3 {
-    background: url("../image/Pbanner3.jpg") no-repeat 50% 50%;
-    background-size: cover;
-  }
-
-  .Mbanner4 {
-    background: url("../image/Pbanner4.jpg") no-repeat 50% 50%;
+    background: url("../image/Pbanner4.jpg") no-repeat 30% 50%;
     background-size: cover;
   }
 
@@ -1492,25 +1531,26 @@ address {
     color: #121212;
     position: absolute;
     left: 14%;
-    bottom: 50%;
-    transform: translateY(50%);
+    bottom: 55%;
+    transform: translateY(55%);
     text-align: left;
     z-index: 1;
   }
 
   .mainbanner .maintext-wrapper .banner_main_tit {
     display: block;
-    font-size: 2.18rem;
+    font-size: 2.3rem;
     font-weight: 700;
     overflow: hidden;
+    width: 1000px;
     text-overflow: ellipsis;
     white-space: nowrap;
-    margin-bottom: 24px;
+    margin-bottom: 10px;
   }
 
   .mainbanner .maintext-wrapper .banner_sub_tit {
     display: block;
-    font-size: 1.25rem;
+    font-size: 1.472rem;
     font-weight: 500;
     text-align: left;
   }
@@ -1681,6 +1721,7 @@ address {
     opacity: 1;
   }
 
+
   .delivery {
     position: relative;
     top: -6px;
@@ -1792,6 +1833,40 @@ address {
     grid-row: 2/3;
   }
 
+
+  .youtube_banner {
+    display: block;
+    margin-top: 90px;
+  }
+
+  .video-gallery {
+    position: relative;
+    border-radius: 13px;
+    overflow: hidden;
+  }
+
+  .video-gallery a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .video-gallery:hover a {
+    background-color: rgba(0, 0, 0, .5);
+  }
+  
+  .row {
+    display: flex;
+    gap: 5%;
+  }
+
+  .col-xl-4 {
+    width: 389px;
+  }
+
   /* PC 푸터 */
   .footer-wrapper {
     position: relative;
@@ -1813,7 +1888,6 @@ address {
   }
 
 }
-
 
 @media screen and (min-width:1200px) {
   .container {
