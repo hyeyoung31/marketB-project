@@ -11,7 +11,6 @@ wind.scroll(function () {
   }
 });
 
-
 // 모바일 햄버거메뉴
 const tabMenu = document.querySelectorAll('.tab-menu li');
 const tabContent = document.querySelectorAll('.tab-content > li');
@@ -43,16 +42,13 @@ var fragment = document.querySelector(' .banner-pagination');
 
 fragment.innerHTML = ('<span style="color:white;">' + 1 + '</span> <span class="mainbanner_bar"></span> ' + totalSlide);
 
-var swiper = new Swiper('.mainbanner', {
+var swiper2 = new Swiper('.mainbanner', {
   slidesPerView: 1,
-  // spaceBetween: 30,
-  // centeredSlides: true,
+  centeredSlides: true,
   loop: true,
-  loopedSLides: 3,
   simulateTouch: true,
   grabCursor: true,
   speed: 800,
-  loopAdditionalSlides: 1,
   pagination: {
     el: '.swiper-progressbar',
     type: 'progressbar'
@@ -72,22 +68,22 @@ var swiper = new Swiper('.mainbanner', {
   },
 });
 
+
 let play = $('.start');
-let pause = $('.pause');
+let stop = $('.stop');
 
 
-pause.on('click', function () {
-  swiper.autoplay.stop();
-  pause.removeClass('active');
+stop.on('click', function () {
+  swiper2.autoplay.stop();
+  stop.removeClass('active');
   play.addClass('active');
 });
 
 play.on('click', function () {
-  swiper.autoplay.start();
+  swiper2.autoplay.start();
   play.removeClass('active');
-  pause.addClass('active');
+  stop.addClass('active');
 })
-
 
 // 아이콘메뉴
 var swiper = new Swiper('.multiple', {
@@ -191,10 +187,18 @@ const swiperOptions = {
   }
 };
 
-
 $('.Mnested-content').each(function () {
   console.log('.Mnested-content');
   const swiper = new Swiper(this, swiperOptions);
+});
+
+
+// 하트 아이콘
+$(function(){
+  $(".like").click(function (e) {
+    e.preventDefault()
+    $(this).toggleClass("selected");
+  });
 });
 
 /* PC MD'S CHOICE, NEW ARRIVAL , BEST ITEM 탭 */
@@ -290,7 +294,6 @@ function CalculateSpaceBetween() {
   return spaceBetween;
 }
 
-
 $(".hamburger").click(function () {
   $(".mt-menu").animate({ marginLeft: "100%" }, 300);
   $(".hamburger").hide();
@@ -302,6 +305,9 @@ $(".cross").click(function () {
   $(".cross").hide();
   $(".hamburger").show();
 });
+
+
+
 
 
 
