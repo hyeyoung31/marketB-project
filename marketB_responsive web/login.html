@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <main class="front container">
+        <div class="visual">
+            <img src="http://placehold.it/550x800" alt="">
+        </div>
+        <section class="sub-content">
+            <h1 class="heading1">로그인</h1>
+            <form class="login_form">
+                <fieldset>
+                    <legend class="hidden">Login form</legend>
+                    <!-- <label for="username">아이디</label> -->
+                    <input type="text" id="username" placeholder="아이디">
+                    <!-- <label for="userpasswd">비밀번호</label> -->
+                    <input type="password" id="userpasswd" placeholder="비밀번호">
+                    <input type="submit" value="로그인" class="btn big">
+                </fieldset>
+
+                <section class="sns-container">
+                    <h1>SNS 로그인</h1>
+                    <div class="sns">
+                        <a href="#"><img src="image/kakao.png" alt="카카오로그인"></a>
+                        <a href="#"><img src="image/naver.png" alt="네이버로그인"></a>
+                        <a href="#"><img src="image/apple.png" alt="네이버로그인"></a>
+                    </div>
+                </section>
+
+            </form>
+
+            <section class="usergate">
+                <h2 class="hidden">회원가입/아이디비번찾기</h2>
+
+                <div class="regsit">
+                    <span>회원이 아니신가요?</span>
+                    <a href="">회원가입 </a>
+                </div>
+
+                <div class="find">
+                    <a href="">아이디찾기 </a>
+                    <a href="">비밀번호 찾기</a>
+                </div>
+
+            </section>
+
+        </section>
+    </main>
+</body>
+
+</html>
